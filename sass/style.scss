@@ -1,0 +1,65 @@
+@use  "sass:color";
+
+$fontstack: 'Gotu', sans-serif;
+$fontsize: 16px;
+$primary: lightskyblue;
+$dark_primary: color.adjust($primary, $lightness: -50%);
+ 
+* {
+    line-height: 2rem;
+    padding: 5px;
+}
+
+#container {
+    max-width: 800px;
+    margin: auto;
+}
+
+nav {
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+    }
+
+    li {
+        width: 33%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary;
+        outline-color: $dark_primary;
+        outline-width: 5px;
+        outline-style: solid;
+        transition: all;
+        transition-duration: 1s;
+
+        &:hover {
+            background-color: $dark_primary;
+        }
+
+        &:hover > a {
+            color: $primary;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark_primary;
+        transition-duration: 1s;
+    }
+}
+
+h1 {
+    color: $dark_primary;
+}
+
+@media (max-width: 650px) {
+    ul {
+        flex-direction: column;
+    }
+}
